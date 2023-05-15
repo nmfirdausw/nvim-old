@@ -1,15 +1,30 @@
 return {
-  {
-    "numToStr/Comment.nvim",
-    keys = {
-      { "gc", mode = { "n", "v" }, desc = "Comment toggle linewise" },
-      { "gb", mode = { "n", "v" }, desc = "Comment toggle blockwise" },
-    },
-    opts = function()
-      local commentstring_avail, commentstring = pcall(require, "ts_context_commentstring.integrations.comment_nvim")
-      return commentstring_avail and commentstring and { pre_hook = commentstring.create_pre_hook() } or {}
-    end,
-  },
+	{
+		"ccaglak/larago.nvim",
+	},
+	{
+		"utilyre/barbecue.nvim",
+		name = "barbecue",
+		version = "*",
+		dependencies = {
+			"SmiteshP/nvim-navic",
+		},
+		opts = {
+			-- configurations go here
+		},
+	},
+	{
+		"numToStr/Comment.nvim",
+		keys = {
+			{ "gc", mode = { "n", "v" }, desc = "Comment toggle linewise" },
+			{ "gb", mode = { "n", "v" }, desc = "Comment toggle blockwise" },
+		},
+		opts = function()
+			local commentstring_avail, commentstring =
+				pcall(require, "ts_context_commentstring.integrations.comment_nvim")
+			return commentstring_avail and commentstring and { pre_hook = commentstring.create_pre_hook() } or {}
+		end,
+	},
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
