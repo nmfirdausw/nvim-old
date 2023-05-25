@@ -1,3 +1,5 @@
+_G.astronvim = {}
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   -- stylua: ignore
@@ -6,19 +8,18 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
-  spec = {
-    { import = "plugins" },
-  },
-  defaults = {
-    lazy = false,
-    version = false,
-  },
-  install = { colorscheme = { "kanagawa", "habamax" } },
-  checker = { enabled = true },
-  performance = {
-    rtp = {
-      disabled_plugins = {
-      },
-    },
-  },
+	spec = {
+		{ import = "plugins" },
+	},
+	defaults = {
+		lazy = false,
+		version = false,
+	},
+	install = { colorscheme = { "kanagawa", "habamax" } },
+	checker = { enabled = true },
+	performance = {
+		rtp = {
+			disabled_plugins = {},
+		},
+	},
 })

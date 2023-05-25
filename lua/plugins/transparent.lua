@@ -23,17 +23,18 @@ return {
 			"DiagnosticSignWarn",
 			"LineNr",
 			"CursorLineNr",
+			"TablineSel",
 		},
 		extra_groups = {}, -- table: additional groups that should be cleared
 		exclude_groups = {}, -- table: groups you don't want to clear
 	},
 	init = function(opts)
 		require("transparent").setup(opts)
-		vim.g.transparent_groups = vim.list_extend(
-			vim.g.transparent_groups or {},
-			vim.tbl_map(function(v)
-				return v.hl_group
-			end, vim.tbl_values(require("bufferline.config").highlights))
-		)
+		-- vim.g.transparent_groups = vim.list_extend(
+		-- 	vim.g.transparent_groups or {},
+		-- 	vim.tbl_map(function(v)
+		-- 		return v.hl_group
+		-- 	end, vim.tbl_values(require("bufferline.config").highlights))
+		-- )
 	end,
 }

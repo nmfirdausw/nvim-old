@@ -3,17 +3,6 @@ return {
 		"ccaglak/larago.nvim",
 	},
 	{
-		"utilyre/barbecue.nvim",
-		name = "barbecue",
-		version = "*",
-		dependencies = {
-			"SmiteshP/nvim-navic",
-		},
-		opts = {
-			-- configurations go here
-		},
-	},
-	{
 		"numToStr/Comment.nvim",
 		keys = {
 			{ "gc", mode = { "n", "v" }, desc = "Comment toggle linewise" },
@@ -81,5 +70,12 @@ return {
 			vim.keymap.del({ "x", "o" }, "x")
 			vim.keymap.del({ "x", "o" }, "X")
 		end,
+	},
+	{
+		"jwalton512/vim-blade",
+		lazy = true,
+		keys = {
+			{ "<leader><leader>", function() end },
+		},
 	},
 }

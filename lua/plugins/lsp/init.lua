@@ -11,7 +11,7 @@ return {
 			{
 				"hrsh7th/cmp-nvim-lsp",
 				cond = function()
-					return require("util").has("nvim-cmp")
+					return require("lazyvim.util").has("nvim-cmp")
 				end,
 			},
 		},
@@ -34,7 +34,7 @@ return {
 			-- add any global capabilities here
 			capabilities = {},
 			-- Automatically format on save
-			autoformat = true,
+			autoformat = false,
 			-- options for vim.lsp.buf.format
 			-- `bufnr` and `filter` is handled by the LazyVim formatter,
 			-- but can be also overridden when specified
@@ -90,7 +90,7 @@ return {
 		},
 		---@param opts PluginLspOpts
 		config = function(_, opts)
-			local Util = require("util")
+			local Util = require("lazyvim.util")
 			-- setup autoformat
 			require("plugins.lsp.format").autoformat = opts.autoformat
 			-- setup formatting and keymaps
@@ -230,6 +230,14 @@ return {
 			else
 				ensure_installed()
 			end
+		end,
+	},
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "InsertEnter",
+		opts = {},
+		config = function(opts)
+			require("lsp_signature").setup(opts)
 		end,
 	},
 }

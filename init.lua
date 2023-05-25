@@ -1,5 +1,5 @@
-require "options"
-require "bootstrap"
-require "keymaps"
+vim.cmd("colorscheme habamax")
 
-require("kanagawa").load("dragon")
+require("options")
+require("bootstrap")
+require("keymaps")
