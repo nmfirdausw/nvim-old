@@ -2,6 +2,7 @@ vim.opt.viewoptions:remove("curdir")
 vim.opt.shortmess:append({ W = true, I = true, c = true })
 vim.opt.backspace:append({ "nostop" })
 vim.opt.diffopt:append("linematch:60")
+vim.g.blade_custom_directives = {'datetime', 'javascript'}
 local options = {
 	opt = {
 		breakindent = true,
